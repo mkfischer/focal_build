@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV PASSWD=${DEFAULT_ADMIN_PASSWORD}
+ARG PASSWD=admin
 
 RUN apt update && apt install  openssh-server sudo -y
 RUN apt dist-upgrade -y
