@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt update && apt install  openssh-server sudo -y
+RUN apt dist-upgrade -y
 
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 admin
 
