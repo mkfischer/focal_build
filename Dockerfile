@@ -3,9 +3,9 @@ FROM ubuntu:latest
 RUN apt update && apt install  openssh-server sudo -y
 RUN apt dist-upgrade -y
 
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 admin
+RUN useradd -rm -d /home/admin -s /bin/bash -g root -G sudo -u 1000 admin
 
-RUN  echo 'admin:admin' | chpasswd
+RUN  echo 'admin:$DEFAULT_ADMIN_PASSWORD' | chpasswd
 
 RUN service ssh start
 
