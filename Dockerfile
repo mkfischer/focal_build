@@ -3,6 +3,8 @@ FROM ubuntu:latest
 ARG PASSWD=admin
 ARG SSHKEY
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt update && apt install  openssh-server sudo -y
 RUN apt dist-upgrade -y
 
