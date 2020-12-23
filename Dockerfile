@@ -7,7 +7,7 @@ RUN apt dist-upgrade -y
 
 RUN useradd -rm -d /home/admin -s /bin/bash -g root -G sudo -u 1000 admin
 
-RUN  echo 'admin:$PASSWD' | chpasswd
+RUN  echo "admin:$PASSWD" | chpasswd
 
 RUN service ssh start
 
