@@ -22,7 +22,7 @@ RUN echo "$SSHKEY" >> /home/admin/.ssh/authorized_keys
 
 RUN chown admin /home/admin/.ssh -R
 
-RUN chmod 0600 /home/admin/.ssh -R
+RUN chmod 0700 /home/admin/.ssh -R
 
 RUN chown admin /home/admin/.ssh -R
 
