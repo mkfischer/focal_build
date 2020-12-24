@@ -5,8 +5,10 @@ ARG SSHKEY
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt install  openssh-server sudo -y
+RUN apt update && apt install  openssh-server vim sudo -y
 RUN apt dist-upgrade -y
+
+RUN update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
 
 RUN useradd -rm -d /home/admin -s /bin/bash -g root -G sudo -u 1000 admin
 
