@@ -14,7 +14,8 @@ RUN  echo "admin:$PASSWD" | chpasswd
 
 RUN mkdir -p /home/admin/.ssh
 
-RUN echo "$SSHKEY" > /home/admin.ssh/authorized_keys
+RUN echo "$SSHKEY" > /home/admin/.ssh/authorized_keys
+
 RUN sed -ri '/\#\s?PermitRootLogin prohibit-password\s?/Id' /etc/ssh/sshd_config
 RUN sed -ri 's/PermitRootLogin yes\s?/PermitRootLogin prohibit-password/gI' /etc/ssh/sshd_config
 RUN sed -ri 's/PasswordAuthentication yes\s?/PasswordAuthentication no/gI' /etc/ssh/sshd_config
